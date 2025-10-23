@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet World</title>
+  </head>
+  <body>
+    <div class="container">
+      <img src="" alt="Pet World logo" class="logo" />
+
+      <div class="agenda">
+        <h1>Daily schedule</h1>
+        <p>Here you can see all clients and services scheduled for today.</p>
+
+        <div class="input">
+          <i><img src="./src/assets/icons/calender.svg" alt="Calendário" /></i>
+          <input type="date" id="date" name="date" required />
+        </div>
+
+        <section class="schedule-period">
+          <header>
+            <img src="./src/assets/icons/morning.svg" alt="Morning" />
+            <strong>Morning</strong>
+            <span>09h-12h</span>
+          </header>
+          <ul id="period-morning" class="card-period">
+            <!-- Exemple  -->
+            <li>
+              <p>
+                <strong>09:00</strong>
+                <strong>Thor</strong>
+                <span>/ Fernanda Costa</span>
+              </p>
+              <p>Vacination</p>
+              <small>Remove appointment</small>
+            </li>
+          </ul>
+        </section>
+
+        <section class="schedule-period">
+          <header>
+            <img src="./src/assets/icons/afternoon.svg" alt="Afternoon" />
+            <strong>Afternoon</strong>
+            <span>13h-17h</span>
+          </header>
+          <ul id="period-afternoon" class="card-period">
+            <!-- Exemple  -->
+            <li>
+              <p>
+                <strong>13:00</strong>
+                <strong>Mel</strong>
+                <span>/ Fernanda Costa</span>
+              </p>
+              <p>Nail Cutting</p>
+              <small>Remove appointment</small>
+            </li>
+            <li>
+              <p>
+                <strong>14:00</strong>
+                <strong>Bella</strong>
+                <span>/ Peter Martins</span>
+              </p>
+              <p>Hygienic Grooming</p>
+              <small>Remove appointment</small>
+            </li>
+          </ul>
+        </section>
+
+        <section class="schedule-period">
+          <header>
+            <img src="./src/assets/icons/evening.svg" alt="Evening" />
+            <strong>Evening</strong>
+            <span>18h-21h</span>
+          </header>
+          <ul id="period-evening" class="card-period">
+            <!-- Exemple  -->
+            <li>
+              <p>
+                <strong>13:00</strong>
+                <strong>Max</strong>
+                <span>/ Camile Sein</span>
+              </p>
+              <p>Teeth Cleaning</p>
+              <small>Remove appointment</small>
+            </li>
+          </ul>
+        </section>
+        <button type="button" id="open-modal">New Appointment</button>
+      </div>
+
+      <div class="modal-content">
+        <img src="./src/assets/icons/close.svg" alt="Close" class="close" />
+        <h2>Book a visit</h2>
+        <p>Fill in the customer's details to schedule an appointment:</p>
+        <form>
+          <div class="input-wrapper">
+            <label for="client-name">Pet owner’s name</label>
+            <img src="./src/assets/icons/user.svg" />
+            <input type="text" name="client-name" id="client-name" />
+          </div>
+
+          <div class="input-wrapper">
+            <label for="pet-name">Pet name</label>
+            <img src="./src/assets/icons/pet-paw.svg" />
+            <input type="text" name="pet-name" id="pet-name" />
+          </div>
+
+          <div class="input-wrapper">
+            <label for="phone">Phone</label>
+            <img src="./src/assets/icons/phone.svg" alt="Phone" />
+            <input type="text" name="phone" id="phone" />
+          </div>
+
+          <div class="input-wrapper">
+            <label for="service-description">Service Description</label>
+            <input
+              type="text"
+              name="service-description"
+              id="service-description"
+            />
+          </div>
+          <div class="flex">
+            <div class="input-wrapper">
+              <label for="appointment-date">Date</label>
+              <img src="./src/assets/icons/calender.svg" alt="Pick a date" />
+              <input
+                type="appointment-date"
+                name="appointment-date"
+                id="appointment-date"
+              />
+            </div>
+
+            <div class="input-wrapper">
+              <label for="appointment-hour">Hour</label>
+              <img src="./src/assets/icons/clock.svg" alt="Choose a hour" />
+              <input
+                type="appointment-hour"
+                name="appointment-hour"
+                id="appointment-hour"
+              />
+            </div>
+          </div>
+
+          <button type="submit">Book</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
