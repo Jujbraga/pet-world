@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Content */
+  --content-primary: #ffffff;
+  --content-secondary: #98959d;
+  --content-tertiary: #666666;
+
+  /* Background */
+  --background-primary: #151515;
+  --background-secondary: #1e1e1e;
+  --background-tertiary: #23242c;
+  --background-highlights: #dbd4fa;
+
+  /* Border */
+  --border-primary: #3e3c41;
+  --border-secondary: #86818c;
+  --border-divisor: #353339;
+
+  --brand: #9282fa;
+
+  --font-family: "Inter", sans-serif;
+}
+
+body {
+  background: var(--background-secondary);
+  font: 500 0.875rem/1.5rem var(--font-family);
+  color: var(--content-primary);
+}
+
+h1,
+h2 {
+  font: 700 1.5rem/2rem "Inter Tight", sans-serif;
+}
+
+label {
+  font-weight: 700;
+}
+
+li {
+  list-style: none;
+}
+
+strong {
+  font-weight: 700;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  background-color: var(--brand);
+  color: var(--background-primary);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  text-transform: uppercase;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-color: #2e2c30;
+  padding: 0.75rem 1.25rem;
+  border-bottom-right-radius: 0.75rem;
+
+  height: 3rem;
+}
+
+.container {
+  max-width: 871px;
+  margin-top: 3rem;
+  margin-inline: auto;
+  padding: 1.25rem;
+}
+
+.container-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+
+  & p {
+    color: var(--content-secondary);
+  }
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--border-primary);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+
+  & input {
+    all: unset;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--content-secondary);
+
+    &::-webkit-calendar-picker-indicator {
+      cursor: pointer;
+      background: url("../assets/icons/arrow-down.svg") no-repeat;
+    }
+  }
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-tertiary);
+  padding: 1.125rem 1.25rem;
+}
+
+.modal {
+  display: none;
+}
+
+@media (width >= 70em) {
+  .container-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .container {
+    padding: 2rem 5rem;
+  }
+
+  .button-wrapper {
+    background-color: transparent;
+    position: fixed;
+    right: 1.25rem;
+    bottom: 2rem;
+  }
+}

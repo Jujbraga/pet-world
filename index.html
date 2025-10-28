@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pet World</title>
+
+    <link rel="stylesheet" href="./src/styles/global.css" />
+    <link rel="stylesheet" href="./src/styles/schedule.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,700;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <img src="./src/assets/logo.svg" alt="Pet World logo" class="logo" />
     <div class="container">
-      <img src="" alt="Pet World logo" class="logo" />
-
-      <div class="agenda">
-        <h1>Daily schedule</h1>
-        <p>Here you can see all clients and services scheduled for today.</p>
-
-        <div class="input">
-          <i><img src="./src/assets/icons/calender.svg" alt="Calendário" /></i>
-          <input type="date" id="date" name="date" required />
+      <header class="container-header">
+        <div>
+          <h1>Daily schedule</h1>
+          <p>Here you can see all clients and services scheduled for today.</p>
         </div>
 
-        <section class="schedule-period">
+        <div class="input">
+          <img src="./src/assets/icons/calender.svg" alt="Calendário" />
+          <input type="date" id="date" name="date" required />
+        </div>
+      </header>
+
+      <div class="agenda">
+        <section class="schedule-period card">
           <header>
             <img src="./src/assets/icons/morning.svg" alt="Morning" />
             <strong>Morning</strong>
@@ -29,8 +41,10 @@
             <li>
               <p>
                 <strong>09:00</strong>
-                <strong>Thor</strong>
-                <span>/ Fernanda Costa</span>
+                <span>
+                  <strong>Thor</strong>
+                  / Fernanda Costa
+                </span>
               </p>
               <p>Vacination</p>
               <small>Remove appointment</small>
@@ -38,7 +52,7 @@
           </ul>
         </section>
 
-        <section class="schedule-period">
+        <section class="schedule-period card">
           <header>
             <img src="./src/assets/icons/afternoon.svg" alt="Afternoon" />
             <strong>Afternoon</strong>
@@ -49,8 +63,10 @@
             <li>
               <p>
                 <strong>13:00</strong>
-                <strong>Mel</strong>
-                <span>/ Fernanda Costa</span>
+                <span>
+                  <strong>Mel</strong>
+                  / Fernanda Costa
+                </span>
               </p>
               <p>Nail Cutting</p>
               <small>Remove appointment</small>
@@ -58,8 +74,10 @@
             <li>
               <p>
                 <strong>14:00</strong>
-                <strong>Bella</strong>
-                <span>/ Peter Martins</span>
+                <span>
+                  <strong>Bella</strong>
+                  / Peter Martins
+                </span>
               </p>
               <p>Hygienic Grooming</p>
               <small>Remove appointment</small>
@@ -67,7 +85,7 @@
           </ul>
         </section>
 
-        <section class="schedule-period">
+        <section class="schedule-period card">
           <header>
             <img src="./src/assets/icons/evening.svg" alt="Evening" />
             <strong>Evening</strong>
@@ -77,18 +95,24 @@
             <!-- Exemple  -->
             <li>
               <p>
-                <strong>13:00</strong>
-                <strong>Max</strong>
-                <span>/ Camile Sein</span>
+                <strong>19:00</strong>
+                <span>
+                  <strong>Max</strong>
+                  / Camile Sein
+                </span>
               </p>
               <p>Teeth Cleaning</p>
               <small>Remove appointment</small>
             </li>
           </ul>
         </section>
-        <button type="button" id="open-modal">New Appointment</button>
       </div>
+    </div>
+    <div class="button-wrapper">
+      <button type="button" id="open-modal">New Appointment</button>
+    </div>
 
+    <div class="modal" id="new-appointment-modal">
       <div class="modal-content">
         <img src="./src/assets/icons/close.svg" alt="Close" class="close" />
         <h2>Book a visit</h2>
