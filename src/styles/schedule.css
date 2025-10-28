@@ -1,0 +1,67 @@
+.agenda {
+  display: grid;
+  gap: 0.75rem;
+  margin-block: 2rem;
+}
+
+.card {
+  background: var(--background-tertiary);
+  border-radius: 10px;
+}
+
+.schedule-period {
+  & header {
+    display: flex;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--border-divisor);
+    gap: 0.75rem;
+    font: 700 1rem/1.5 var(--font-family);
+
+    & span {
+      margin-left: auto;
+      color: var(--content-secondary);
+    }
+  }
+
+  & ul {
+    padding: 1.25rem;
+    display: grid;
+    gap: 0.75rem;
+
+    & li {
+      display: grid;
+      gap: 0.5rem;
+      padding: 0.75rem;
+      font-size: 0.75rem;
+      line-height: 1rem;
+      color: var(--content-secondary);
+
+      p {
+        display: flex;
+        gap: 0.75rem;
+      }
+
+      & strong {
+        color: var(--content-primary);
+      }
+
+      & small {
+        text-align: right;
+        color: var(--content-tertiary);
+      }
+    }
+
+    & li:not(:last-child) {
+      border-bottom: 1px solid var(--border-divisor);
+    }
+  }
+}
+
+@media (width >= 40em) {
+  .schedule-period {
+    & ul li {
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 1rem;
+    }
+  }
+}
