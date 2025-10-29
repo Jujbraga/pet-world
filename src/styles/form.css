@@ -1,0 +1,58 @@
+form {
+  display: grid;
+  gap: 1rem;
+
+  & fieldset {
+    all: unset;
+    gap: 1rem;
+    width: 100%;
+
+    & div {
+      width: 100%;
+    }
+  }
+  & div:has(button) {
+    text-align: end;
+    padding-top: 0.75rem;
+  }
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--border-primary);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+
+  & input,
+  textarea {
+    all: unset;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--content-secondary);
+    width: 100%;
+
+    &::-webkit-calendar-picker-indicator {
+      cursor: pointer;
+      background: url("../assets/icons/arrow-down.svg") no-repeat;
+    }
+  }
+  &:hover {
+    border-color: var(--border-secondary);
+  }
+
+  &:focus-within {
+    border-color: var(--brand);
+  }
+
+  textarea {
+    scrollbar-color: var(--brand) var(--background-tertiary);
+  }
+}
+
+@media (width >= 40em) {
+  .desktop-flex {
+    display: flex;
+  }
+}

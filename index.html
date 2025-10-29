@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="./src/styles/global.css" />
     <link rel="stylesheet" href="./src/styles/schedule.css" />
+    <link rel="stylesheet" href="./src/styles/form.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,700;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
@@ -23,7 +24,7 @@
           <p>Here you can see all clients and services scheduled for today.</p>
         </div>
 
-        <div class="input">
+        <div class="input-wrapper">
           <img src="./src/assets/icons/calender.svg" alt="Calendário" />
           <input type="date" id="date" name="date" required />
         </div>
@@ -113,60 +114,92 @@
     </div>
 
     <div class="modal" id="new-appointment-modal">
-      <div class="modal-content">
+      <div class="modal-header">
         <img src="./src/assets/icons/close.svg" alt="Close" class="close" />
         <h2>Book a visit</h2>
         <p>Fill in the customer's details to schedule an appointment:</p>
+      </div>
+      <div class="modal-content">
         <form>
-          <div class="input-wrapper">
+          <fieldset>
             <label for="client-name">Pet owner’s name</label>
-            <img src="./src/assets/icons/user.svg" />
-            <input type="text" name="client-name" id="client-name" />
-          </div>
+            <div class="input-wrapper">
+              <img src="./src/assets/icons/user.svg" />
+              <input
+                type="text"
+                name="client-name"
+                id="client-name"
+                placeholder="Anne Smith"
+              />
+            </div>
+          </fieldset>
 
-          <div class="input-wrapper">
+          <fieldset>
             <label for="pet-name">Pet name</label>
-            <img src="./src/assets/icons/pet-paw.svg" />
-            <input type="text" name="pet-name" id="pet-name" />
-          </div>
+            <div class="input-wrapper">
+              <img src="./src/assets/icons/pet-paw.svg" />
+              <input
+                type="text"
+                name="pet-name"
+                id="pet-name"
+                placeholder="Cheddar"
+              />
+            </div>
+          </fieldset>
 
-          <div class="input-wrapper">
+          <fieldset>
             <label for="phone">Phone</label>
-            <img src="./src/assets/icons/phone.svg" alt="Phone" />
-            <input type="text" name="phone" id="phone" />
-          </div>
+            <div class="input-wrapper">
+              <img src="./src/assets/icons/phone.svg" alt="Phone" />
+              <input
+                type="text"
+                name="phone"
+                id="phone"
+                placeholder="(00) 000000-0000"
+              />
+            </div>
+          </fieldset>
 
-          <div class="input-wrapper">
+          <fieldset>
             <label for="service-description">Service Description</label>
-            <input
-              type="text"
-              name="service-description"
-              id="service-description"
-            />
-          </div>
-          <div class="flex">
             <div class="input-wrapper">
+              <textarea
+                name="service-description"
+                id="service-description"
+                placeholder="Nail Cutting"
+                rows="2"
+              >
+              </textarea>
+            </div>
+          </fieldset>
+
+          <fieldset class="desktop-flex">
+            <div>
               <label for="appointment-date">Date</label>
-              <img src="./src/assets/icons/calender.svg" alt="Pick a date" />
-              <input
-                type="appointment-date"
-                name="appointment-date"
-                id="appointment-date"
-              />
+              <div class="input-wrapper">
+                <img src="./src/assets/icons/calender.svg" alt="Pick a date" />
+                <input
+                  type="date"
+                  name="appointment-date"
+                  id="appointment-date"
+                />
+              </div>
             </div>
-
-            <div class="input-wrapper">
+            <div>
               <label for="appointment-hour">Hour</label>
-              <img src="./src/assets/icons/clock.svg" alt="Choose a hour" />
-              <input
-                type="appointment-hour"
-                name="appointment-hour"
-                id="appointment-hour"
-              />
+              <div class="input-wrapper">
+                <img src="./src/assets/icons/clock.svg" alt="Choose a hour" />
+                <input
+                  type="time"
+                  name="appointment-hour"
+                  id="appointment-hour"
+                />
+              </div>
             </div>
+          </fieldset>
+          <div>
+            <button type="submit">Book</button>
           </div>
-
-          <button type="submit">Book</button>
         </form>
       </div>
     </div>
