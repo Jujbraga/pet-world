@@ -48,6 +48,12 @@
       & small {
         text-align: right;
         color: var(--content-tertiary);
+        cursor: pointer;
+
+        &:hover {
+          color: var(--content-primary);
+          text-decoration: underline;
+        }
       }
     }
 

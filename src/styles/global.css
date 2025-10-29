@@ -57,6 +57,14 @@ button {
   border-radius: 0.5rem;
   padding: 0.75rem 1.5rem;
   text-transform: uppercase;
+
+  &:hover {
+    background-color: var(--background-highlights);
+  }
+}
+
+.flex {
+  display: flex;
 }
 
 .logo {
@@ -89,7 +97,7 @@ button {
   }
 }
 
-.input {
+.input-wrapper {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -107,6 +115,13 @@ button {
       cursor: pointer;
       background: url("../assets/icons/arrow-down.svg") no-repeat;
     }
+  }
+  &:hover {
+    border-color: var(--border-secondary);
+  }
+
+  &:focus-within {
+    border-color: var(--brand);
   }
 }
 
