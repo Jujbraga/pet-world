@@ -102,50 +102,6 @@ button {
   padding: 1.125rem 1.25rem;
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background: rgba(0, 0, 0, 0.01);
-  backdrop-filter: blur(6px);
-  padding: 1.25rem;
-}
-
-.modal-content {
-  max-width: 477px;
-  margin: 2.43rem auto;
-  background-color: var(--background-tertiary);
-  border-radius: 0.75rem;
-  padding-inline: clamp(1.35rem, 5vw, 2.5rem);
-  padding-block: 2.5rem;
-  display: grid;
-  gap: 1.75rem;
-  position: relative;
-}
-
-.modal-header {
-  & .close {
-    position: absolute;
-    top: 1.35rem;
-    right: 1.35rem;
-    cursor: pointer;
-  }
-
-  & p {
-    margin-top: 0.25rem;
-    color: var(--content-secondary);
-  }
-}
-
-.modal-body {
-  display: grid;
-}
-
 @media (width >= 70em) {
   .container-header {
     flex-direction: row;
