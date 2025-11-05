@@ -4,6 +4,9 @@ import { openingHours } from "../../utils/opening-hours.js";
 const hours = document.getElementById("appointment-hour");
 
 export function hoursLoad({ date }) {
+  // Clear the hours list
+  hours.innerHTML = "";
+
   // Gets the list with all hours
   const opening = openingHours.map((hour) => {
     const [scheduleHour] = hour.split(":");
