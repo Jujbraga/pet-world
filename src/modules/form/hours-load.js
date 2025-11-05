@@ -3,20 +3,28 @@ import { openingHours } from "../../utils/opening-hours.js";
 
 const hours = document.getElementById("appointment-hour");
 
-export function hoursLoad({ date }) {
+export function hoursLoad({ date, dailyAppointments }) {
   // Clear the hours list
   hours.innerHTML = "";
+
+  // Gets the list with all hours that has appointments
+  const unavailableHours = dailyAppointments.map((schedule) =>
+    dayjs(schedule.when).format("HH:mm")
+  );
 
   // Gets the list with all hours
   const opening = openingHours.map((hour) => {
     const [scheduleHour] = hour.split(":");
 
     // Adds hour and checks if is in the past
-    const isHourPast = dayjs(date).add(scheduleHour, "hour").isAfter(dayjs());
+    const isHourPast = dayjs(date).add(scheduleHour, "hour").isBefore(dayjs());
+
+    //
+    const available = !unavailableHours.includes(hour) && !isHourPast;
 
     return {
       hour,
-      available: isHourPast,
+      available,
     };
   });
 
