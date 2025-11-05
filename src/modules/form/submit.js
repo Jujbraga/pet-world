@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { hoursLoad } from "./hours-load.js";
+import { newAppointment } from "../../services/appointment-new.js";
 
 const form = document.querySelector("form");
 const clientName = document.getElementById("client-name");
@@ -9,7 +9,7 @@ const serviceDescription = document.getElementById("service-description");
 const appointmentDate = document.getElementById("appointment-date");
 const appointmentHour = document.getElementById("appointment-hour");
 
-form.onsubmit = (event) => {
+form.onsubmit = async (event) => {
   event.preventDefault();
 
   try {
@@ -46,14 +46,7 @@ form.onsubmit = (event) => {
       return alert("Select a hour.");
     }
 
-    return {
-      id,
-      name,
-      pet,
-      phone,
-      service,
-      when,
-    };
+    await newAppointment({ id, name, pet, phone, service, when });
   } catch (error) {
     console.log(error);
     alert("It was not possible to schedule an appointment.");
