@@ -17,6 +17,8 @@ export async function appointmentsFetchByDay({ date }) {
     return dailySchedules;
   } catch (error) {
     console.log(error);
-    alert("Não foi possível buscar os agendamentos do dia selecionado.");
+    alert(
+      "It was not possible to get the daily appointments. Try again later."
+    );
   }
 }

@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
 import { appointmentsFetchByDay } from "../../services/appointment-fetch.js";
+import { showAppointments } from "./show.js";
 
 const selectedDate = document.getElementById("date");
 
@@ -11,5 +12,6 @@ export async function schedulesDay() {
 
   // Search in api the appointments
   const dailyAppointments = await appointmentsFetchByDay({ date });
-  console.log(dailyAppointments);
+
+  showAppointments({ dailyAppointments });
 }
