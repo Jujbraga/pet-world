@@ -1,14 +1,15 @@
 import dayjs from "dayjs";
-import { hoursLoad } from "../form/hours-load.js";
+import { appointmentsFetchByDay } from "../../services/appointment-fetch.js";
 
 const selectedDate = document.getElementById("date");
 
 // Show the current date to input field
 selectedDate.value = dayjs(new Date()).format("YYYY-MM-DD");
 
-export function schedulesDay() {
+export async function schedulesDay() {
   const date = selectedDate.value;
 
-  // Load the availables hours
-  hoursLoad({ date });
+  // Search in api the appointments
+  const dailyAppointments = await appointmentsFetchByDay({ date });
+  console.log(dailyAppointments);
 }
