@@ -1,5 +1,7 @@
 import dayjs from "dayjs";
 import { newAppointment } from "../../services/appointment-new.js";
+import { schedulesDay } from "../schedules/load.js";
+import { formFields } from "./form-load.js";
 
 const form = document.querySelector("form");
 const clientName = document.getElementById("client-name");
@@ -8,6 +10,8 @@ const clientPhone = document.getElementById("phone");
 const serviceDescription = document.getElementById("service-description");
 const appointmentDate = document.getElementById("appointment-date");
 const appointmentHour = document.getElementById("appointment-hour");
+const modal = document.getElementById("new-appointment-modal");
+const selectedDate = document.getElementById("date");
 
 form.onsubmit = async (event) => {
   event.preventDefault();
@@ -46,7 +50,25 @@ form.onsubmit = async (event) => {
       return alert("Select a hour.");
     }
 
+    // Make the new appointment
     await newAppointment({ id, name, pet, phone, service, when });
+
+    // Set the schedules date to the new appointment to show the schedules
+    selectedDate.value = appointmentDate.value;
+
+    //Reload the appointments
+    await schedulesDay();
+
+    // Reload the available hours in the form
+    await formFields();
+
+    modal.style.display = "none";
+
+    // Clear the inputs
+    clientName.value = "";
+    petName.value = "";
+    clientPhone.value = "";
+    serviceDescription.value = "";
   } catch (error) {
     console.log(error);
     alert("It was not possible to schedule an appointment.");
