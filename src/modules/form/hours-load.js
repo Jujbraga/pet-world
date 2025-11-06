@@ -9,7 +9,7 @@ export function hoursLoad({ date, dailyAppointments }) {
 
   // Gets the list with all hours that has appointments
   const unavailableHours = dailyAppointments.map((schedule) =>
-    dayjs(schedule.when).format("HH:mm")
+    dayjs(schedule.when).format("H:mm")
   );
 
   // Gets the list with all hours
@@ -19,7 +19,7 @@ export function hoursLoad({ date, dailyAppointments }) {
     // Adds hour and checks if is in the past
     const isHourPast = dayjs(date).add(scheduleHour, "hour").isBefore(dayjs());
 
-    //
+    // Check if hour is available
     const available = !unavailableHours.includes(hour) && !isHourPast;
 
     return {
