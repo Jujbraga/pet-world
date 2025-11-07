@@ -12,7 +12,17 @@ export function showAppointments({ dailyAppointments }) {
     periodAfternoon.innerHTML = "";
     periodEvening.innerHTML = "";
 
-    dailyAppointments.forEach((appointment) => {
+    // Sort the appointments by when (hour)
+    const sortDailyAppointments = dailyAppointments.sort((a, b) => {
+      if (a.when < b.when) {
+        return -1;
+      }
+      if (a.when > b.when) {
+        return 1;
+      }
+    });
+
+    sortDailyAppointments.forEach((appointment) => {
       const item = document.createElement("li");
       const p = document.createElement("p");
       const time = document.createElement("strong");
