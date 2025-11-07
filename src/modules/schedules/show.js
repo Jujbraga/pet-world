@@ -28,7 +28,7 @@ export function showAppointments({ dailyAppointments }) {
       name.innerHTML = `<strong>${appointment.pet}</strong> / ${appointment.name}`;
       service.textContent = appointment.service;
       removeItem.textContent = "Remove appointment";
-      removeItem.setAttribute("data", "remove");
+      removeItem.setAttribute("data-remove", "true");
 
       // Add time and name to p
       p.append(time, name);

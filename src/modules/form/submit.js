@@ -33,7 +33,7 @@ form.onsubmit = async (event) => {
     );
 
     // Generates an ID
-    const id = new Date().getTime();
+    const id = new Date().getTime().toString();
 
     // Check if they are not empty
     if (!name) {
