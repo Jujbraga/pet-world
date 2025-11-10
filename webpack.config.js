@@ -10,6 +10,7 @@ module.exports = {
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
+    publicPath: "/pet-world/", // path relativo to gh-pages
   },
 
   devServer: {
