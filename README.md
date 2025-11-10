@@ -29,15 +29,16 @@ To run this project locally:
 1. Clone the repo:  
    ```bash
    git clone https://github.com/Jujbraga/pet-world.git
+   ```
 2. Install dependencies:
 ```bash
-  npm install
+  npm install```
 3. Run the development server:
 ```bash
-  npm start
+  npm start```
 4. Build for production:
 ```bash
-  npm run build
+  npm run build```
 5. Open dist/index.html (or the served URL) in your browser.
 
 ## 📌 Status
