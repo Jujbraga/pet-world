@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,700;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
-  <link rel="icon" href="dog-favicon.svg"><script defer src="main.js"></script></head>
+  <link rel="icon" href="/pet-world/dog-favicon.svg"><script defer src="/pet-world/main.js"></script></head>
   <body>
     <img src="./src/assets/logo.svg" alt="Pet World logo" class="logo" />
     <div class="container">
@@ -36,7 +36,7 @@
           </header>
           <ul id="period-morning" class="card-period">
             <!-- Exemple  -->
-            <li>
+            <!-- <li>
               <p>
                 <strong>09:00</strong>
                 <span>
@@ -46,7 +46,7 @@
               </p>
               <p>Vacination</p>
               <small>Remove appointment</small>
-            </li>
+            </li> -->
           </ul>
         </section>
 
@@ -58,7 +58,7 @@
           </header>
           <ul id="period-afternoon" class="card-period">
             <!-- Exemple  -->
-            <li>
+            <!-- <li>
               <p>
                 <strong>13:00</strong>
                 <span>
@@ -79,7 +79,7 @@
               </p>
               <p>Hygienic Grooming</p>
               <small>Remove appointment</small>
-            </li>
+            </li> -->
           </ul>
         </section>
 
@@ -91,7 +91,7 @@
           </header>
           <ul id="period-evening" class="card-period">
             <!-- Exemple  -->
-            <li>
+            <!-- <li>
               <p>
                 <strong>19:00</strong>
                 <span>
@@ -101,7 +101,7 @@
               </p>
               <p>Teeth Cleaning</p>
               <small>Remove appointment</small>
-            </li>
+            </li> -->
           </ul>
         </section>
       </div>
@@ -128,6 +128,7 @@
                   name="client-name"
                   id="client-name"
                   placeholder="Anne Smith"
+                  required
                 />
               </div>
             </fieldset>
@@ -141,6 +142,7 @@
                   name="pet-name"
                   id="pet-name"
                   placeholder="Cheddar"
+                  required
                 />
               </div>
             </fieldset>
@@ -154,6 +156,7 @@
                   name="phone"
                   id="phone"
                   placeholder="(00) 000000-0000"
+                  required
                 />
               </div>
             </fieldset>
@@ -166,8 +169,8 @@
                   id="service-description"
                   placeholder="Nail Cutting"
                   rows="2"
-                >
-                </textarea>
+                  required
+                ></textarea>
               </div>
             </fieldset>
 
@@ -183,6 +186,7 @@
                     type="date"
                     name="appointment-date"
                     id="appointment-date"
+                    required
                   />
                 </div>
               </div>
@@ -190,11 +194,11 @@
                 <label for="appointment-hour">Hour</label>
                 <div class="input-wrapper">
                   <img src="./src/assets/icons/clock.svg" alt="Choose a hour" />
-                  <input
-                    type="time"
+                  <select
                     name="appointment-hour"
                     id="appointment-hour"
-                  />
+                    required
+                  ></select>
                 </div>
               </div>
             </fieldset>
