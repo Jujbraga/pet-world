@@ -61,6 +61,11 @@ button {
   &:hover {
     background-color: var(--background-highlights);
   }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }
 
 .logo {

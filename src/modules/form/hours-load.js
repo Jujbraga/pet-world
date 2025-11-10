@@ -2,6 +2,7 @@ import dayjs from "dayjs";
 import { openingHours } from "../../utils/opening-hours.js";
 
 const hours = document.getElementById("appointment-hour");
+const submit = document.querySelector("[type=submit]");
 
 export function hoursLoad({ date, dailyAppointments }) {
   // Clear the hours list
@@ -28,12 +29,26 @@ export function hoursLoad({ date, dailyAppointments }) {
     };
   });
 
-  // Render the available hours in select
-  opening.forEach(({ hour, available }) => {
-    if (available) {
-      const option = document.createElement("option");
-      option.textContent = hour;
-      hours.append(option);
-    }
-  });
+  // check if there is any available hour.
+  const isAvailable = opening.some(({ available }) => available);
+
+  if (!isAvailable) {
+    // If not available disable select hour and submit button
+    hours.disabled = true;
+    submit.disabled = true;
+    const option = document.createElement("option");
+    option.textContent = "No time available";
+    hours.append(option);
+  } else {
+    hours.disabled = false;
+    submit.disabled = false;
+    // Render the available hours in select
+    opening.forEach(({ hour, available }) => {
+      if (available) {
+        const option = document.createElement("option");
+        option.textContent = hour;
+        hours.append(option);
+      }
+    });
+  }
 }

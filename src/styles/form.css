@@ -43,6 +43,11 @@ form {
     &:open::-webkit-calendar-picker-indicator {
       rotate: 180deg;
     }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
   }
 
   input:-webkit-autofill,
