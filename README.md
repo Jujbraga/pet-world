@@ -23,6 +23,9 @@ Check it out live: [jujbraga.github.io/pet-world](https://jujbraga.github.io/pet
 - Package manager: npm
 - Hosting: GitHub Pages
 
+## 📸 Preview
+<img width="1053" height="819" alt="Screenshot 2025-11-10 at 11 11 53" src="https://github.com/user-attachments/assets/b939acf9-f5c0-4c6b-906e-f2c2ac0e69bd" />
+
 
 ## 🔧 Getting Started  
 To run this project locally:  
@@ -32,13 +35,16 @@ To run this project locally:
    ```
 2. Install dependencies:
 ```bash
-  npm install```
+   npm install
+  ```
 3. Run the development server:
 ```bash
-  npm start```
+   npm start
+  ```
 4. Build for production:
 ```bash
-  npm run build```
+   npm run build
+  ```
 5. Open dist/index.html (or the served URL) in your browser.
 
 ## 📌 Status
