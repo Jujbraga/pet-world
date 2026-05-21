@@ -19,14 +19,14 @@ periods.forEach((period) => {
       if (id) {
         // Checks if the appointment should be canceled
         const isConfirm = confirm(
-          "Are you sure you want to remove this appointment?"
+          "Are you sure you want to remove this appointment?",
         );
 
         if (isConfirm) {
           // Makes the API requisition to cancel the appointment
           await appointmentRemove({ id });
 
-          // Reload the daily appontments
+          // Reload the daily appointments
           schedulesDay();
 
           // Reload the available hours in form

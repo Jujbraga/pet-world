@@ -1,3 +1,6 @@
+const isProduction = window.location.hostname !== "localhost";
+
 export const apiConfig = {
-  baseURL: "http://localhost:3333",
+  baseURL: isProduction ? null : "http://localhost:3333",
+  useLocalStorage: isProduction,
 };

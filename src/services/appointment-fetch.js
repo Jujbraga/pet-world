@@ -3,22 +3,20 @@ import { apiConfig } from "./api-config.js";
 
 export async function appointmentsFetchByDay({ date }) {
   try {
-    // Makes the api requisition
+    if (apiConfig.useLocalStorage) {
+      const data = JSON.parse(localStorage.getItem("schedules") || "[]");
+      return data.filter((schedule) =>
+        dayjs(date).isSame(schedule.when, "day"),
+      );
+    }
+
     const response = await fetch(`${apiConfig.baseURL}/schedules`);
-
-    // Converts to JSON
     const data = await response.json();
-
-    // Filters appointments by the selected day
-    const dailySchedules = data.filter((schedule) =>
-      dayjs(date).isSame(schedule.when, "day")
-    );
-
-    return dailySchedules;
+    return data.filter((schedule) => dayjs(date).isSame(schedule.when, "day"));
   } catch (error) {
     console.log(error);
     alert(
-      "It was not possible to get the daily appointments. Try again later."
+      "It was not possible to get the daily appointments. Try again later.",
     );
   }
 }
